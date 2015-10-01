@@ -327,11 +327,36 @@ public class Principal {
 				break;
 				
 			case "q":
+				String opcaoPentagono;
 				JOptionPane.showMessageDialog(null, "Petagonos!");
 				double ladoPentagono, apontema;
 				ladoPentagono = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do lado: "));
 				apontema = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor da apontema:\n\n*se pensarmos em Tringulos, a"
 						+ " a apontema seria o valor da altura do trinagulo! :)"));
+				Pentagono objPentagono = new Pentagono(ladoPentagono, apontema);
+				do{
+					opcaoPentagono = JOptionPane.showInputDialog("Deseja saber:\n"
+						+"a. Area.\n"
+						+"b. Perímetro\n\n"
+						+"Digite a opção desejado ou s para voltar:");
+					opcaoPentagono = opcaoPentagono.toLowerCase();
+
+					switch(opcaoPentagono){
+						case "a":
+							JOptionPane.showMessageDialog(null, "A Área do Pentagono é "+objPentagono.calculaArea());
+							break;
+						case "b":
+							JOptionPane.showMessageDialog(null, "O Perímetro Pentagono é "+objPentagono.calculaPerimetro());
+							break;
+						case "s":
+							JOptionPane.showMessageDialog(null, "voltando ao menu anterior.. ");
+							break;
+						default:
+							JOptionPane.showMessageDialog(null, "Opção inválida!");
+							break;
+					}
+
+				}while(!opcaoPentagono.equals("s"))
 				//CONTINUAR
 				break;
 			case "r":
