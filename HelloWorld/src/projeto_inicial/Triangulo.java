@@ -1,15 +1,15 @@
 package projeto_inicial;
 
 public class Triangulo {
-	double base, altura, lado;
+	double lado, altura;
 	
-	public Triangulo(double base, double altura, double lado) {
-		this.base = base;
+	public Triangulo(double lado, double altura) {
+		this.lado = lado;
 		this.altura = altura;
 	}
 	
 	double calculaArea(){
-		return (base * altura) /2;
+		return (lado * altura) /2;
 	}
 
 	double calculaPerimetro() {
