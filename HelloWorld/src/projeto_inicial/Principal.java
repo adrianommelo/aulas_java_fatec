@@ -42,7 +42,7 @@ public class Principal {
 					+ "o - Circulo\n"
 					+ "p - Triangulo\n"
 					+ "q - Pentagono\n"
-					+ "r - ??\n"
+					+ "r - Exponenciação\n"
 					+ "s - Jogo da Moeda"
 					+ "\nDigite SAIR para fechar o programa\n\n"
 					+ "\nEscolha uma opção:");
@@ -292,13 +292,13 @@ public class Principal {
 				
 			case "p":
 				String opcaoTriangulo;
-				double baseTriangulo, alturaTriangulo, ladoTriangulo;
-				JOptionPane.showMessageDialog(null, "Retangulo!\n Um retangulo é conhecido por ter um valor de base\n"
-						+ "e  um valor de altura...");
-				baseTriangulo = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor da Base:"));
+				double alturaTriangulo, ladoTriangulo;
+				JOptionPane.showMessageDialog(null, "Triangulo!\n Usaremos um triangulo simples para o calculo, de três lados iguais....");
+
+				ladoTriangulo = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor de um dos Lados:"));
 				alturaTriangulo = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor da Altura:"));
-				ladoTriangulo = Double.parseDouble(JOptionPane.showInputDialog("Precisamos também que nos diga o valor de LADO do triangulo:"));
-				Triangulo objTriangulo = new Triangulo(baseTriangulo, alturaTriangulo, ladoTriangulo);
+				
+				Triangulo objTriangulo = new Triangulo(ladoTriangulo, alturaTriangulo);
 				
 				do {
 					opcaoTriangulo = JOptionPane.showInputDialog("Deseja calcular:\n"
@@ -330,10 +330,13 @@ public class Principal {
 				String opcaoPentagono;
 				JOptionPane.showMessageDialog(null, "Petagonos!");
 				double ladoPentagono, apontema;
+				
 				ladoPentagono = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do lado: "));
 				apontema = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor da apontema:\n\n*se pensarmos em Tringulos, a"
 						+ " a apontema seria o valor da altura do trinagulo! :)"));
+				
 				Pentagono objPentagono = new Pentagono(ladoPentagono, apontema);
+				
 				do{
 					opcaoPentagono = JOptionPane.showInputDialog("Deseja saber:\n"
 						+"a. Area.\n"
@@ -360,8 +363,19 @@ public class Principal {
 				//CONTINUAR
 				break;
 			case "r":
-				JOptionPane.showMessageDialog(null, "Em construção!");
-				//CONTINUAR
+				
+				JOptionPane.showMessageDialog(null, "Calculo de Exponenciação!");
+				
+				double baseExponenciacao, exponenciador;
+				
+				baseExponenciacao = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor que deseja elevar:"));
+				exponenciador = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do exponenciador:"));
+				
+				Exponenciacao objExpo = new Exponenciacao(baseExponenciacao, exponenciador);
+				
+				JOptionPane.showMessageDialog(null, ""+baseExponenciacao+" elevado à "+exponenciador+" é igual a "+objExpo.calularExponenciacao()+""
+						+ "\n\nPrecione OK para voltar ao MENU");
+				
 				break;
 				
 			case "s":
